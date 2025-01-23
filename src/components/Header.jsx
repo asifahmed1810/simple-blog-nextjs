@@ -10,10 +10,10 @@ const Header = ({ user }) => {
   return (
     <header className="flex justify-between items-center p-5 px-20 bg-gray-100">
       <nav>
-        <Link href="/" className="mr-4 text-blue-500 underline">
+        <Link href="/" className="mr-4  text-xl font-semibold">
           Home
         </Link>
-        <Link href="/dashboard" className="text-blue-500 underline">
+        <Link href="/dashboard" className=" text-xl font-semibold">
           Dashboard
         </Link>
       </nav>

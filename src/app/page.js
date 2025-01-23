@@ -21,9 +21,9 @@ export default async function Home() {
   return (
     <>
       <Header user={user}></Header>
-      <div className="p-6">
-        <h1 className="text-2xl font-bold mb-4">Blog Posts</h1>
-        <ul className="space-y-4">
+      <div className="p-10 px-20">
+        <h1 className="text-2xl font-bold mb-4 underline">Blog Posts</h1>
+        <ul className="space-y-6">
           {
             posts.map(post => <li key={post.id}>
               <Link href={`/blog/${post.id}`}>

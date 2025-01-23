@@ -26,9 +26,9 @@ export default async function DashboardPage() {
         </>
       ) : (
         <>
-          <div className="text-center mt-40 items-center">
-            <h1 className="text-3xl text-red-600">If you want to view this page, please</h1>
-            <LoginLink className="mr-5 btn btn-neutral">Login</LoginLink>
+          <div className="text-center mt-40 flex justify-center items-center">
+            <h1 className="text-3xl font-semibold "> Go to,</h1>
+            <LoginLink className="ml-2 btn ">Click Here</LoginLink>
           </div>
 
 
