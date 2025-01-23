@@ -1,25 +1,32 @@
-
-import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
-
+import Link from "next/link";
 
 
-export default function Home() {
+async function getPosts() {
+  const res=await fetch(' https://jsonplaceholder.typicode.com/posts',{
+    next:{revalidate:60}
+  });
+  return res.json();
+  
+}
+
+export default async function Home() {
+
+  const posts=await getPosts();
+
+
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-
-      <h1>This is home page</h1>
-
-
-
-
-
-
-      <LoginLink>Sign in</LoginLink>
-      <RegisterLink >Sign up</RegisterLink>
-
-
-
-
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Blog Posts</h1>
+      <ul className="space-y-4">
+        {
+          posts.map(post => <li  key={post.id}>
+            <Link href={`/blog/${post.id}`}>
+            <h1 className="text-blue-600">{post.title}</h1>
+            </Link>
+          </li>)
+        }
+      </ul>
     </div>
   );
 }
