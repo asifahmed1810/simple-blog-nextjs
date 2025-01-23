@@ -1,9 +1,10 @@
-import {getKindeServerSession, LogoutLink} from "@kinde-oss/kinde-auth-nextjs/server";
+import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
+import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
-const {getUser} = getKindeServerSession();
-const user = await getUser();
+// const {getUser} = getKindeServerSession();
+// const user = await getUser();
 
-console.log(user);
+// console.log(user);
 import React from 'react';
 
 const page = () => {
@@ -13,6 +14,10 @@ const page = () => {
         <div className="p-6">
         <h1 className="text-2xl font-bold">Hello {user.given_name} Welcome to your profile!</h1>
         <LogoutLink className="btn btn-neutral">Logout</LogoutLink>
+        
+
+
+       
       </div>
     );
 };

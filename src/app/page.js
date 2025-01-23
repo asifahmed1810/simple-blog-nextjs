@@ -1,4 +1,7 @@
+
 import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
+
+
 
 export default function Home() {
   return (
@@ -7,9 +10,14 @@ export default function Home() {
       <h1>This is home page</h1>
 
 
-      <LoginLink className="btn btn-neutral">Sign in</LoginLink>
 
-      <RegisterLink className="btn btn-neutral">Sign up</RegisterLink>
+
+
+
+      <LoginLink>Sign in</LoginLink>
+      <RegisterLink >Sign up</RegisterLink>
+
+
 
 
     </div>

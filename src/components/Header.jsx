@@ -1,13 +1,16 @@
-'use client'
+'use client';
 
-import { useKindeAuth } from '@kinde-oss/kinde-auth-nextjs';
-import Link from 'next/link';
 import React from 'react';
+import { LoginLink, LogoutLink, RegisterLink, useKindeAuth } from '@kinde-oss/kinde-auth-nextjs';
+
+import Link from 'next/link';
 
 const Header = () => {
-    const {isAuthenticated, login, logout}=useKindeAuth();
-    return (
-        <header className="flex justify-between items-center p-4 bg-gray-100">
+  const { isAuthenticated } = useKindeAuth();
+  console.log(isAuthenticated)
+
+  return (
+    <header className="flex justify-between items-center p-5 px-20 bg-gray-100">
       <nav>
         <Link href="/" className="mr-4 text-blue-500 underline">
           Home
@@ -18,17 +21,16 @@ const Header = () => {
       </nav>
       <div>
         {isAuthenticated ? (
-          <button onClick={logout} className="bg-red-500 text-white px-4 py-2">
-            Logout
-          </button>
+          <LogoutLink className="btn btn-neutral">Logout</LogoutLink>
         ) : (
-          <button onClick={login} className="bg-blue-500 text-white px-4 py-2">
-            Login
-          </button>
+          <>
+            <LoginLink className="mr-5 btn btn-neutral">Login</LoginLink>
+            <RegisterLink className="btn btn-neutral">Sign up</RegisterLink>
+          </>
         )}
       </div>
     </header>
-    );
+  );
 };
 
 export default Header;
